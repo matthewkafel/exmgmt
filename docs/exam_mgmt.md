@@ -2,7 +2,7 @@
 
 > This document was automatically converted from PDF: `exam_mgmt.pdf`
 > 
-> Generated on: 2026-02-03 02:18:02
+> Generated on: 2026-02-03 02:27:27
 > Images extracted: 15
 
 ---
@@ -105,7 +105,53 @@ Capability Viewpoint Taxonomy (CV-2)
 
 ![Page 3 Diagram](images/exam_mgmt_page3_img1.png)
 
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+VBMS: Exam Management Ul bip-message-workflow and
+related microservices
+Create a Request for
+Clarification for an ESR,
+Create, Delete, Save,
+and Submit ESR
+Request Contention
+Cancelation
+Cancel Contentions }*-—} <<include>> ~—P>—
+Modify Claim
+Information Complete Appointment
+View and Modity
+Appointments Notify of Complete
+Result Package
+-=sinclude>>
+DAS System
+J actor
+Request Appointment
+Cancellation
+VBMS User —-[-<<include>-—l-->{ Cancel Appointment {—
+Schedule or Rescheduld\
+Appointment
+Create Appointment \__} _ <<inctude>>—[-»
+Rescheduling Request,
+‘Modify Data Pertaining
+‘to Contentions
+‘Submit a Response to
+Request for Clarification,
+View Exam Transaction
+Details
+```
+
 ![Page 3 Diagram](images/exam_mgmt_page3_img0.png)
+
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+<<BRM Capabilty>>
+4.4 Process Benefits
+<<BRM Service>>
+1.4.2 Develop Claim
+<<BRM Function>>
+1.1.2.2 Manage Examinations
+```
 
 ### Content
 
@@ -188,6 +234,42 @@ functionalities of Exam Management.
 
 ![Page 5 Diagram](images/exam_mgmt_page5_img2.png)
 
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+\Exam Destination}
+\VBMS Ratings
+Import DBQ
+‘Suggested vendor / DBQ XML
+destination P| VBMS Core Claim Evidence ¢— PEC XML»! vaseo
+J rake tem *
+Updates
+Submit ESR Document Veteran documents
+Generation —
+DBQ XML
+Exam Management Tenant Apps Batch App
+T
+a Manifest’ a
+ESR Event Package Veteran
+documents
+ESR/Contention/Appointment Results Available DBOQXML
+messages Event Package
+(RAP)
+vy
+DEQ
+es Message —>| es)
+A T A
+Manifest
+Acknowledge Veteran
+ESR message documents
+Results Available
+ESR ESR/Contention/Appointment Event Package
+Event Package messages (RAP)
+v DBQ XML
+Vendors
+(VHA CAPRI / MDEO Contract Vendors)
+```
+
 ### Content
 
 Legend
@@ -222,6 +304,23 @@ Claim Evidence - eFolder
 
 ![Page 6 Diagram](images/exam_mgmt_page6_img3.png)
 
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+Vendor -
+~ Receive Message
+Receive Package
+Send Message ~' Recieve Documents
+Receive Message Send Documents
+Create Package
+VBMS : Exam Management
+‘Send Message
+Retrieve Documents Create ESR related Documents
+Store Documents
+Operational Performers|
+VEFS Claim Evidence
+```
+
 ### Content
 
 Claim Evidence - eFolder 
@@ -239,6 +338,39 @@ functions of Exam Management.
 ### Diagrams/Images
 
 ![Page 7 Diagram](images/exam_mgmt_page7_img4.png)
+
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+BEP -#1898
+CAPRI
+VASIID 1130
+Tracked Item Service Document Service Standard Data Service
+cots O ©
+Exam Management Within Exam
+VASI ID 3005 a ‘Management (and
+bip-exam-standard- VBMS Core), many
+data-ul legacy messages are
+z ] exchanged via records
+ina shared database
+bip-exam-mgmt-ui
+Enhanced
+History
+API
+bip-exam-mgmt bip-exam-standard-
+data £4
+Exam Destination
+VASIID 3032
+bip-message- Exams DBE
+Schemas ¢
+(within VBMSUI DB) bip-exam-documere Vers cial
+Processor VASIID 3023
+\VBMS Core
+VASI ID 3356
+<aws ros-> &_] i] vans cour |
+<AWS RDS> BMS Core UI
+(other than Exams schemas)
+```
 
 ### Content
 
@@ -338,6 +470,70 @@ and services outside of Exam Management.
 ### Diagrams/Images
 
 ![Page 9 Diagram](images/exam_mgmt_page9_img5.png)
+
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+<<System #3005>>
+Exam Management
+=<RESTIul Service>>
+Exam Message Workflow
+Resource Dependency
+Resource Dependency
+<<Service>>
+( Standard Data
+Logic
+Dependency
+<<RESTIul Service>>
+exam-mgmt
+Capabilty Implementation
+1.1 Process Benefits
+F.2 Develop Claim
+1.1.2.2 Manage Examinations
+Resource Dependency
+>| createAndUploadPdfF orContentionCanceled
+<<System #3356>>
+VEMS Core
+=<Senvice>>
+=<Senvice>>
+createAndUploadPdfF or xamSchedule
+=<Senvice=>
+createAndUploadPdfF orExamCiarification
+=<Senvice>>
+createAndUploadPdfF or xamModification
+<<Senvice=>
+createAndUploadPdfF orEmrContention
+CancellationModification
+<<Service>>
+createAndUploadEmrExamRequest
+Cancellation
+<<System #1898>>
+BEP Services
+<<Service>>
+findTrackedltems
+<<Senvice>>
+manageTrackeditems
+=<Semvice>>
+manageClaimantletterV2
+=<Semvice>>
+generateTrackeditems
+=<Senvice>>
+getContentionTypeList
+=<Senvice>>
+getContentionCiassificationTypeCodelist
+=<Senvice>>
+findPayeeCodes
+=<Semvice>>
+findPredischargeType
+<<System #2085>>
+Benefit Security Service
+=<RESTIul Service>>
+Benefit Security Service
+<<System #3032>>
+Exam Destination
+<<RESTIul Service>>
+‘exam-destination
+```
 
 ### Content
 
@@ -513,6 +709,39 @@ VBMSExam Message Workflow is a consumer of VBMS Core
 
 ![Page 12 Diagram](images/exam_mgmt_page12_img6.png)
 
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+e
+Create
+‘Admin Mass ESR Submission Event
+Reassign
+‘Successful submission to DAS:
+Acknowledgement Event
+‘Admin Mass
+In Triage ‘Cancelation Process:
+Clarification Request
+Response Event Appointment Schedule:
+Clarification Request Event
+Reassignment
+Exam Cancelation Event
+Exam Contention Canceled Event
+Clarification Request Response Event
+& ESR Cancelation Event
+Canceled
+Open
+Admin Mass
+Reassignment
+‘amin
+Completed
+Result Package
+Available Event
+Completed
+‘Admin Mass
+Cancelation Process
+[Admin Canceled)
+```
+
 ### Content
 
 Exam Management : exam-mgmt (3005) Exam Destination (3032) Internal to 
@@ -607,6 +836,59 @@ Contention State Transitions
 
 ![Page 14 Diagram](images/exam_mgmt_page14_img7.png)
 
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+raft Exam Submission Event: Processing
+Contention Removed
+before Exam Submission Event
+Rem
+Clarification Request
+Response (Contention Removed)
+joved
+Exam Mass
+‘Admin Cancel
+Exam Acknowledgement Event
+4 Exam Mass
+__ in triage ‘Admin Cancel
+Contention
+\ cancelation
+Event
+Result Package
+Available Event
+lL ‘Appointment Creation
+Available Event
+Canceled
+Exam Mass
+Event
+>( scheduled
+‘Admin Cancel
+Appointment Canceled Event
+(All appointments canceled)
+conten -——¥
+Appointment Creation
+Event
+Appointment Completed Event
+(All appointments terminal)
+Pending
+Documents
+‘Admin_Canceled : Exam Mass
+Cancelation pen
+event = \____J
+Result Package
+Available Event
+Result Package
+‘Admin Cancel
+‘Admin_Canceled : Exam Mass
+‘Admin Cancel
+Exam Mass
+‘Admin Cancel,
+‘Ramin
+Completed
+‘Rami
+Canceled
+```
+
 ### Content
 
 State Description
@@ -640,6 +922,35 @@ Admin Completed An exam mass admin cancel has occurred
 
 ![Page 15 Diagram](images/exam_mgmt_page15_img8.png)
 
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+Appointment
+‘Scheduled
+Event
+Reschedule Requested
+Appointment
+Reschedule
+Requested
+Event
+Appointment Scheduled Event
+gy
+Scheduled
+—4
+Appointment Cancel
+Request Event
+ot
+Cancel Requested
+Appointment Canceled Event
+———_Ja—___,
+Canceled
+Appointment
+Completed
+Event
+Completed
+Final
+```
+
 ### Content
 
 Open No appointments are currently scheduled but the Contention still has not closed
@@ -672,6 +983,15 @@ Scheduled AppointmentScheduledEvent has triggered and the appointment has been r
 ### Diagrams/Images
 
 ![Page 16 Diagram](images/exam_mgmt_page16_img9.png)
+
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+Exam Requests
+Exam Standard Data
+Inbound Messages
+Appointments
+```
 
 ### Content
 
@@ -710,7 +1030,91 @@ Logical Data Viewpoint Model ( ) DIV-2
 
 ![Page 17 Diagram](images/exam_mgmt_page17_img11.png)
 
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+VBMSDASINTG
+VBMSEXAM
+VBMSUI
+BATCH_METRICS.
+ADDRESS_CHANGE
+EXAM_EVENT_LOG_CONT_ASSOC
+EXAM_TRANSACTION_ASSOC.
+EXT_CLAIM
+CRON_JOB_LOCK
+APPOINTMENT
+EXAM_EVENT_LOG
+EXAM_TRANSACTION_ATTR
+‘STANDARDDEVELOPMENTACTION
+EMs_INBOUND_EVENT
+APPOINTMENT_RESCHEDULE
+EXAM_MOD_CLARIF_ASSOC
+EXAM_TRANSACTION
+VLER_DBQATTACHMENT
+EMS_INBOUND_ORDER_EVENT
+APPT_EXAM_REQ_CONT_ASSOC
+EXAM_REQUEST_ADDRESS
+FACILITY
+VLER_DBQ
+EMS_INBOUND_ORDER_HEADER
+CONTENTION_CANCELLATION
+EXAM_REQUEST_ALERT
+MESSAGES_RETRYING
+EXT_FLASH
+EMs_INTERNAL_EVENT
+CONTENTION_CLARIFICATION
+EXAM_REQUEST_CANCELLATION
+TRANSPORT_RETRY
+EXT_MILITARY_SERVICE
+EMS_OUTBOUND_ERROR_EVENT
+CONTENTION_REMOVAL
+EXAM_REQUEST_CONTENTION
+MESSAGES_RETRYING_STEP_STATUS
+EMS_OUTBOUND_EVENT
+EFOLDER_DOC_MNFT
+EXAM_REQUEST_DESTINATION,
+RESULT_DOCUMENT_INFO
+EMS_OUTBOUND_GROUP_EVENT
+EMR_ACTION
+EXAM_REQUEST
+‘SPECIAL_INSTRUCTIONS
+JMS_LEASE
+EMR_ACTION_HEADER.
+EXAM_REQUEST_MODIFICATION
+EXAM_CLARIFICATION
+EXAM_STATE_SNAPSHOT
+```
+
 ![Page 17 Diagram](images/exam_mgmt_page17_img10.png)
+
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+Exam Requests
+fexamRequestIO - (PK)
+[eipCode
+JveteraniD
+destination
+Gestination
+Exam Standard Data
+|
+Exam Request
+Contention
+‘contentionlD - (PK)
+examRequestiD : (Fk)
+A
+ointments
+fappointmentiD - (PK)
+JexamRequestiD - (FK)
+IcontentioniD : (Fk)
+Jabg
+Outbound Messag
+TmessageeventiD (PK)
+Loosely
+Associated
+Inbound Messages
+fmessageRetumeventiD - (PK)
+```
 
 ### Content
 
@@ -725,7 +1129,95 @@ ESR and Appointment Process Model
 
 ![Page 18 Diagram](images/exam_mgmt_page18_img13.png)
 
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+DBQ Submission Flow
+BIA Malware
+Solution (Future)
+MDEO Contract
+Vendors
+CAPRI
+y
+2a. ESR
+Received
+J
+9.DBQ
+Notification
+Received
+10. Request
+DBO via |_,/12. Validate]
+Notification DEQ
+URL
+6. DBQ
+Received
+3060
+7,080 | sl wcinaton
+St
+11. DBQ
+Sent
+12.St0re
+46c. RAP
+Received
+a ©)
+18. Contention]
+status is
+‘Complete!
+19. Tracked|
+>| Item
+Updated
+416. RAP
+Forwarded
+t
+16a. RAP
+Received
+5. Requests
+‘scanned for
+malware
+ry
+v
+2c. ESR 3. DBQ Info|_,} 4. DBa
+Received [>| Collected |~>| Submitted
+14. RAP
+Collected
+3. pea info} | 4.080
+‘Submitted
+Created
+18. RAP.
+‘Submitted
+```
+
 ![Page 18 Diagram](images/exam_mgmt_page18_img12.png)
+
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+Request an exam Confirm
+be scheduled Appointment Confirm completion|
+ESR Event
+EMS Integration
+2 Conti
+8 cancelation
+8
+s
+a
+=
+5
+i=
+= Ave ational
+fo appointments
+2 Complete needed to
+ZY it | acknowedge esr Confirm Veteran requests appointment with complete ESR?
+Appointment reschedule Veteran
+Appointment
+canceled
+VHA or Vendor EMS
+[Upload Documents
+Cancelation can
+be for reasons
+such as by request,
+failure to show, ete
+```
 
 ### Content
 
@@ -832,6 +1324,32 @@ Results Available Package (RAP) Process
 ### Diagrams/Images
 
 ![Page 20 Diagram](images/exam_mgmt_page20_img14.png)
+
+**Diagram Text Content (OCR extracted for Copilot):**
+
+```
+VEMS Core
+‘Exam Management DAS
+Claim Evidence
+| $¢—deiver arp)
+——s.oritese _—p
+= = = [Biri aertmatedS L_ send sn Package:
+< an ‘Send ESR Package —pp|
+Deliver ESR Package >)
+: aa
+i —— ~~~ [ sigan)
+H i - - | ae) iiss
+H TS
+: Tamara hy \e- - - - [Sc
+H «--.{ @ae vies
+i iiss
+H RSI
+: reamen hy |e - - - [Easier
+H <«--| Sar iiespe
+: iio,
+H Jasons na and 080x011
+Dalver 080 XML!
+```
 
 ### Content
 

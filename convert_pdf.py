@@ -1,10 +1,23 @@
 #!/usr/bin/env python3
 """
-PDF to Markdown Converter with Image Extraction
+PDF to Markdown Converter with Image Extraction and OCR
 
 This script converts PDF files (e.g., from Confluence exports) into markdown format
-that can be easily read and queried by GitHub Copilot. It extracts both text and 
-images/diagrams from the PDF.
+that can be easily read and queried by GitHub Copilot. It extracts text from pages,
+extracts images/diagrams, and uses OCR to extract text from diagrams to make them
+accessible to Copilot.
+
+Features:
+- Extracts text from PDF pages
+- Extracts all images and diagrams
+- Uses OCR (Optical Character Recognition) to extract text from diagrams
+- Embeds OCR-extracted text in markdown for Copilot accessibility
+- Creates a well-formatted markdown file with images and text
+
+Requirements:
+- Python 3.6+
+- PyPDF2, Pillow, pytesseract (install via: pip install -r requirements.txt)
+- Tesseract OCR (install via system package manager)
 
 Usage:
     python convert_pdf.py <pdf_file> [output_dir]
@@ -21,10 +34,33 @@ import io
 try:
     from PyPDF2 import PdfReader
     from PIL import Image
+    import pytesseract
 except ImportError as e:
     print(f"Error: Required library is not installed: {e}")
     print("Please install dependencies using: pip install -r requirements.txt")
     sys.exit(1)
+
+
+def extract_text_from_image(img_path):
+    """
+    Extract text from an image using OCR (Optical Character Recognition).
+    
+    Args:
+        img_path: Path to the image file
+        
+    Returns:
+        Extracted text as a string, or empty string if OCR fails
+    """
+    try:
+        img = Image.open(img_path)
+        # Use pytesseract to extract text
+        text = pytesseract.image_to_string(img)
+        # Clean up the text - remove excessive whitespace
+        text = '\n'.join(line.strip() for line in text.split('\n') if line.strip())
+        return text
+    except Exception as e:
+        print(f"  ⚠ Warning: Could not extract text from image {img_path}: {e}")
+        return ""
 
 
 def extract_images_from_page(page, page_num, pdf_name, images_dir):
@@ -142,7 +178,17 @@ def extract_text_and_images_from_pdf(pdf_path, images_dir):
                     page_content += "### Diagrams/Images\n\n"
                     for img in images:
                         # Use relative path from docs/ directory
+                        img_path = images_dir / img
                         page_content += f"![Page {i} Diagram](images/{img})\n\n"
+                        
+                        # Extract text from the image using OCR for Copilot accessibility
+                        print(f"  → Extracting text from diagram: {img}")
+                        ocr_text = extract_text_from_image(img_path)
+                        if ocr_text:
+                            page_content += f"**Diagram Text Content (OCR extracted for Copilot):**\n\n```\n{ocr_text}\n```\n\n"
+                        else:
+                            page_content += "*[No text could be extracted from this diagram]*\n\n"
+                    
                     page_content += "### Content\n\n"
                 
                 page_content += f"{text}\n"
