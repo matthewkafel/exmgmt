@@ -15,6 +15,7 @@ Example:
 import sys
 import os
 from pathlib import Path
+from datetime import datetime
 try:
     from PyPDF2 import PdfReader
 except ImportError:
@@ -85,11 +86,14 @@ def convert_pdf_to_markdown(pdf_path, output_dir="docs"):
     output_path = output_dir / md_filename
     
     # Create markdown content with header
+    file_mtime = Path(pdf_path).stat().st_mtime
+    formatted_date = datetime.fromtimestamp(file_mtime).strftime('%Y-%m-%d %H:%M:%S')
+    
     markdown_content = f"""# {pdf_path.stem}
 
 > This document was automatically converted from PDF: `{pdf_path.name}`
 > 
-> Generated on: {Path(pdf_path).stat().st_mtime}
+> Generated on: {formatted_date}
 
 ---
 

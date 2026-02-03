@@ -60,4 +60,4 @@ After uploading your PDF to `pdfs/`:
 # 4. You open docs/architecture.md and ask Copilot questions!
 ```
 
-Need help? Check the main [README.md](../README.md) for detailed instructions.
+Need help? Check the main [README.md](README.md) for detailed instructions.
