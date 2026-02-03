@@ -101,8 +101,9 @@ python convert_pdf.py pdfs/architecture.pdf
 ## Features
 
 - **PDF Text Extraction**: Extracts text content from PDF files
-- **Markdown Conversion**: Converts PDFs to well-formatted markdown
-- **Copilot-Friendly**: Output is optimized for GitHub Copilot to understand and query
+- **Image & Diagram Extraction**: Automatically extracts all images, diagrams, and visualizations from PDFs
+- **Markdown Conversion**: Converts PDFs to well-formatted markdown with embedded image references
+- **Copilot-Friendly**: Output is optimized for GitHub Copilot to understand and query (including visual diagrams)
 - **Page Tracking**: Maintains page numbers for reference
 - **Automated Workflow**: Simple command-line interface
 
@@ -112,10 +113,11 @@ python convert_pdf.py pdfs/architecture.pdf
 exmgmt/
 ├── README.md              # This file
 ├── requirements.txt       # Python dependencies
-├── convert_pdf.py        # PDF to Markdown converter
+├── convert_pdf.py        # PDF to Markdown converter (with image extraction)
 ├── pdfs/                 # 📁 Upload your PDF files here
 │   └── README.md         # Upload instructions
 ├── docs/                 # 📄 Converted markdown files (for Copilot)
+│   ├── images/           # 🖼️ Extracted diagrams and images
 │   └── README.md         # Documentation guide
 └── .gitignore           # Git ignore rules
 ```
@@ -123,19 +125,25 @@ exmgmt/
 ## How It Works
 
 1. **Input**: You provide a PDF file (e.g., exported from Confluence)
-2. **Processing**: The script extracts text from each page
+2. **Processing**: The script extracts:
+   - Text from each page
+   - All images, diagrams, and visualizations
 3. **Output**: Creates a markdown file with:
    - Document title
-   - Metadata (source file, date)
+   - Metadata (source file, date, image count)
    - Page-by-page content
-4. **Integration**: GitHub Copilot can read and understand the markdown content
+   - Embedded image references for all diagrams
+   - All extracted images saved to `docs/images/`
+4. **Integration**: GitHub Copilot can read and understand both the text content and visual diagrams through the markdown
 
 ## Tips for Best Results
 
 - **Use descriptive filenames**: Name your PDFs clearly (e.g., `api-architecture.pdf`)
 - **Keep documents focused**: Smaller, focused documents work better than large ones
-- **Review the output**: Check the generated markdown to ensure text was extracted correctly
-- **Commit to repository**: Add the markdown files to version control so they're available in your workspace
+- **Review the output**: Check the generated markdown to ensure text and images were extracted correctly
+- **View extracted images**: All diagrams are saved to `docs/images/` and embedded in the markdown
+- **Commit to repository**: Add both the markdown files and images to version control so they're available in your workspace
+- **Ask about diagrams**: Copilot can now reference and explain the diagrams in your architecture documents
 
 ## Troubleshooting
 
