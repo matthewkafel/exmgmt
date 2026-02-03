@@ -2,6 +2,8 @@
 
 Documentation management system with PDF-to-Markdown conversion for GitHub Copilot integration.
 
+> **🚀 New here?** Check out the [Quick Start Guide](QUICKSTART.md) to learn where to upload your PDFs!
+
 ## Overview
 
 This repository provides tools to convert PDF documents (such as architecture pages from Confluence) into markdown format that GitHub Copilot can easily read and use to answer questions.
