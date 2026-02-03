@@ -1,10 +1,23 @@
 #!/usr/bin/env python3
 """
-PDF to Markdown Converter with Image Extraction
+PDF to Markdown Converter with Image Extraction and OCR
 
 This script converts PDF files (e.g., from Confluence exports) into markdown format
-that can be easily read and queried by GitHub Copilot. It extracts both text and 
-images/diagrams from the PDF.
+that can be easily read and queried by GitHub Copilot. It extracts text from pages,
+extracts images/diagrams, and uses OCR to extract text from diagrams to make them
+accessible to Copilot.
+
+Features:
+- Extracts text from PDF pages
+- Extracts all images and diagrams
+- Uses OCR (Optical Character Recognition) to extract text from diagrams
+- Embeds OCR-extracted text in markdown for Copilot accessibility
+- Creates a well-formatted markdown file with images and text
+
+Requirements:
+- Python 3.6+
+- PyPDF2, Pillow, pytesseract (install via: pip install -r requirements.txt)
+- Tesseract OCR (install via system package manager)
 
 Usage:
     python convert_pdf.py <pdf_file> [output_dir]

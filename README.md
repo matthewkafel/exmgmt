@@ -14,6 +14,7 @@ This repository provides tools to convert PDF documents (such as architecture pa
 
 - Python 3.6 or higher
 - pip (Python package manager)
+- Tesseract OCR (for extracting text from diagrams)
 
 ### Installation
 
@@ -23,7 +24,22 @@ This repository provides tools to convert PDF documents (such as architecture pa
    cd exmgmt
    ```
 
-2. Install dependencies:
+2. Install Tesseract OCR:
+   
+   **On Ubuntu/Debian:**
+   ```bash
+   sudo apt-get install tesseract-ocr
+   ```
+   
+   **On macOS:**
+   ```bash
+   brew install tesseract
+   ```
+   
+   **On Windows:**
+   Download and install from: https://github.com/UB-Mannheim/tesseract/wiki
+
+3. Install Python dependencies:
    ```bash
    pip install -r requirements.txt
    ```
@@ -102,8 +118,9 @@ python convert_pdf.py pdfs/architecture.pdf
 
 - **PDF Text Extraction**: Extracts text content from PDF files
 - **Image & Diagram Extraction**: Automatically extracts all images, diagrams, and visualizations from PDFs
+- **OCR Text Recognition**: Uses OCR (Optical Character Recognition) to extract text from diagrams and images
 - **Markdown Conversion**: Converts PDFs to well-formatted markdown with embedded image references
-- **Copilot-Friendly**: Output is optimized for GitHub Copilot to understand and query (including visual diagrams)
+- **Copilot-Friendly**: Output is optimized for GitHub Copilot to understand and query, including OCR-extracted text from diagrams
 - **Page Tracking**: Maintains page numbers for reference
 - **Automated Workflow**: Simple command-line interface
 
@@ -128,13 +145,15 @@ exmgmt/
 2. **Processing**: The script extracts:
    - Text from each page
    - All images, diagrams, and visualizations
+   - Text content from diagrams using OCR (Optical Character Recognition)
 3. **Output**: Creates a markdown file with:
    - Document title
    - Metadata (source file, date, image count)
    - Page-by-page content
    - Embedded image references for all diagrams
+   - OCR-extracted text from each diagram (in code blocks for Copilot to read)
    - All extracted images saved to `docs/images/`
-4. **Integration**: GitHub Copilot can read and understand both the text content and visual diagrams through the markdown
+4. **Integration**: GitHub Copilot can read and understand both the text content and diagram content through the markdown (thanks to OCR text extraction)
 
 ## Tips for Best Results
 
@@ -142,13 +161,22 @@ exmgmt/
 - **Keep documents focused**: Smaller, focused documents work better than large ones
 - **Review the output**: Check the generated markdown to ensure text and images were extracted correctly
 - **View extracted images**: All diagrams are saved to `docs/images/` and embedded in the markdown
+- **Check OCR text**: OCR-extracted text appears in code blocks under each diagram - review for accuracy
 - **Commit to repository**: Add both the markdown files and images to version control so they're available in your workspace
-- **Ask about diagrams**: Copilot can now reference and explain the diagrams in your architecture documents
+- **Ask about diagrams**: Copilot can now understand and explain the diagrams using the OCR-extracted text
 
 ## Troubleshooting
 
 ### "PyPDF2 is not installed"
 Run: `pip install -r requirements.txt`
+
+### "pytesseract is not installed" or "TesseractNotFoundError"
+Install Tesseract OCR:
+- **Ubuntu/Debian**: `sudo apt-get install tesseract-ocr`
+- **macOS**: `brew install tesseract`
+- **Windows**: Download from https://github.com/UB-Mannheim/tesseract/wiki
+
+Then install Python dependencies: `pip install -r requirements.txt`
 
 ### Text extraction is garbled
 Some PDFs (especially scanned documents or those with complex formatting) may not extract cleanly. Try:
@@ -156,11 +184,19 @@ Some PDFs (especially scanned documents or those with complex formatting) may no
 - Simplifying the PDF formatting before export
 - Using OCR tools for scanned documents before conversion
 
+### OCR text from diagrams is inaccurate
+OCR accuracy depends on image quality. For best results:
+- Use high-resolution PDFs
+- Ensure diagrams have clear, readable text
+- Check the extracted images in `docs/images/` to verify quality
+- Note that complex diagrams with overlapping elements may not OCR perfectly
+
 ### Copilot isn't using the document content
 Make sure:
 - The markdown file is in your workspace
 - You have the file open in your editor
 - You're asking specific questions related to the content
+- The OCR-extracted text is visible in the markdown (look for "Diagram Text Content" sections)
 
 ## Contributing
 
