@@ -2,7 +2,8 @@
 
 > This document was automatically converted from PDF: `exam_mgmt.pdf`
 > 
-> Generated on: 2026-02-03 02:03:13
+> Generated on: 2026-02-03 02:18:02
+> Images extracted: 15
 
 ---
 
@@ -100,6 +101,14 @@ Capability Viewpoint Taxonomy (CV-2)
 
 ## Page 3
 
+### Diagrams/Images
+
+![Page 3 Diagram](images/exam_mgmt_page3_img1.png)
+
+![Page 3 Diagram](images/exam_mgmt_page3_img0.png)
+
+### Content
+
 Use Cases
 The Use Case View describes the primary functions Exam Management e xtends to its users.
 Main Actors
@@ -175,6 +184,12 @@ functionalities of Exam Management.
 
 ## Page 5
 
+### Diagrams/Images
+
+![Page 5 Diagram](images/exam_mgmt_page5_img2.png)
+
+### Content
+
 Legend
 Gray R rce to resource being documented ectangle = External resou
 White Rectangle = Internal resource to resource being documented
@@ -203,6 +218,12 @@ Claim Evidence - eFolder
 
 ## Page 6
 
+### Diagrams/Images
+
+![Page 6 Diagram](images/exam_mgmt_page6_img3.png)
+
+### Content
+
 Claim Evidence - eFolder 
 #3023VASRD DBQ XML Form Data
 Claim Evidence - eFolder 
@@ -214,6 +235,12 @@ The SV-1: Systems Interface Description describes the types of interfaces betwee
 functions of Exam Management.
 
 ## Page 7
+
+### Diagrams/Images
+
+![Page 7 Diagram](images/exam_mgmt_page7_img4.png)
+
+### Content
 
 Legend
 Gray Rectangle = External resource to resource being documented
@@ -307,6 +334,12 @@ The SvcV-1 describes the connections and dependencies between Exam Management se
 and services outside of Exam Management.
 
 ## Page 9
+
+### Diagrams/Images
+
+![Page 9 Diagram](images/exam_mgmt_page9_img5.png)
+
+### Content
 
 Service/API Operation ID Description
 Exam Management (3005) /api/v1/exammgmt/exam-message
@@ -476,6 +509,12 @@ VBMSExam Message Workflow is a consumer of VBMS Core
 
 ## Page 12
 
+### Diagrams/Images
+
+![Page 12 Diagram](images/exam_mgmt_page12_img6.png)
+
+### Content
+
 Exam Management : exam-mgmt (3005) Exam Destination (3032) Internal to 
 VBMSEM depends on Exam Destination
 Exam Management : exam-mgmt (3005) BSS (2985) Internal to 
@@ -564,6 +603,12 @@ Contention State Transitions
 
 ## Page 14
 
+### Diagrams/Images
+
+![Page 14 Diagram](images/exam_mgmt_page14_img7.png)
+
+### Content
+
 State Description
 Draft Exam has been scheduled linked to contention
 Processing An exam linked with a contention has been successfully submitted, but not yet acknowledged
@@ -591,6 +636,12 @@ Admin Completed An exam mass admin cancel has occurred
 
 ## Page 15
 
+### Diagrams/Images
+
+![Page 15 Diagram](images/exam_mgmt_page15_img8.png)
+
+### Content
+
 Open No appointments are currently scheduled but the Contention still has not closed
 Canceled The contention has been canceled
 Completed The results package has become available
@@ -617,6 +668,12 @@ RequestedA request to reschedule has been made that needs to be fulfilled by the
 Scheduled AppointmentScheduledEvent has triggered and the appointment has been rescheduled by the EMS
 
 ## Page 16
+
+### Diagrams/Images
+
+![Page 16 Diagram](images/exam_mgmt_page16_img9.png)
+
+### Content
 
 Cancel Requested A request to cancel has been submitted and is awaiting cancellation by the EMS
 Canceled AppointmentCanceledEvent has triggered
@@ -649,12 +706,28 @@ Logical Data Viewpoint Model ( ) DIV-2
 
 ## Page 17
 
+### Diagrams/Images
+
+![Page 17 Diagram](images/exam_mgmt_page17_img11.png)
+
+![Page 17 Diagram](images/exam_mgmt_page17_img10.png)
+
+### Content
+
 Physical Data Viewpoint Model ( )DIV-3
 Process View (Business Process Model)
 Main Business Process Model (OV-6d)
 ESR and Appointment Process Model
 
 ## Page 18
+
+### Diagrams/Images
+
+![Page 18 Diagram](images/exam_mgmt_page18_img13.png)
+
+![Page 18 Diagram](images/exam_mgmt_page18_img12.png)
+
+### Content
 
 Exam and DBQ Process Model
 DBQ Submission Flow Details
@@ -755,6 +828,12 @@ process.
 Results Available Package (RAP) Process
 
 ## Page 20
+
+### Diagrams/Images
+
+![Page 20 Diagram](images/exam_mgmt_page20_img14.png)
+
+### Content
 
 14. 
 RAP 
